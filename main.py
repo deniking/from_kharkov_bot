@@ -30,8 +30,8 @@ def handle_text(message):
     elif (u'здоров' in msg):
         privet = ["Здоровее видали😂", "Здоров без всяких докторов", "как ваше ничего?😂", "хаюшки-бабаюшки", "прЮвет😂"]
         bot.send_message(message.chat.id, random.choice(privet))
-    lif(u'да' in msg):
-    privet = ["БОЛДА😂", "да-да", "да-туда😂", "караганДА"]
-    bot.send_message(message.chat.id, random.choice(privet))
+    elif(u'да' in msg):
+        privet = ["БОЛДА😂", "да-да", "да-туда😂", "караганДА"]
+        bot.send_message(message.chat.id, random.choice(privet))
 
 bot.polling()
