@@ -10,8 +10,27 @@ def handle_text(message):
     msg=message.text
     msg=msg.lower()
     if (u'привет' in msg):
-        privet = ["Привет лапух", "Приветик", "Че хотел?", "Ну и дальше что?", "Привед-ВЕДМЕД 😂"]
+        privet = ["Привет лапух", "Приветик", "Че хотел?", "Ну здравствуй 😁", "Привед-ВЕДМЕД 😂"]
         bot.reply_to(message, random.choice(privet))
+        stick = ["CAACAgIAAxkBAAEFYJdi3u09S0gzuMRXLodpRjoNKG93xQACxQIAAgaRjBcsdq1awo9q_ikE",
+                 "CAACAgIAAxkBAAEFYJVi3urLgZ0PFUfmVuoxIEosbkqrOQAC7BkAAn-lWEoHlUhTrYI7YCkE",
+                 "CAACAgIAAxkBAAEFYJli3u1B72JfxAY4W_f96c0FBRBeGwACxAIAAgaRjBcSw6H4sKsL9ykE",
+                 "CAACAgIAAxkBAAEFYJti3u1GbtHRL4XFSNCuvi8pkMQCQQACxgIAAgaRjBfOSwzjrq1o0CkE",
+                 "CAACAgIAAxkBAAEFYJ1i3u1Mr35QcbHwa7LfkAYgVfyJGQACxwIAAgaRjBfkvOE8LeT9mikE"]
+        bot.send_sticker(message.chat.id, random.choice(stick))
+    elif (msg == 'привет из россии' or msg == 'россия'):
+        privet = ["Рашка-пидорашка😁", "Биомусор из Рашки", "Оркостан", "Кацапское удобрение 😁", "Рашисты-фашисты"]
+        bot.reply_to(message, random.choice(privet))
+        stick = ["CAACAgIAAxkBAAEFYJ9i3u-UC0gq3y52QzkojfC30d2OkgAC0wIAAgaRjBe5kRzrUAy8aikE",
+                 "CAACAgIAAxkBAAEFYKli3u-6Y_Veb1ayO-e8-Lk_zW_UBAAC8gIAAgaRjBf2OH4xSJqHJikE",
+                 "CAACAgIAAxkBAAEFYKti3u_VCbvhay5X-ZbqME1f6yp8LwACOwMAAgaRjBdh3FhOcCqFeykE",
+                 "CAACAgIAAxkBAAEFYKNi3u-ZoVgVGAwnrhWidgaHtNqCDgACOwMAAgaRjBdh3FhOcCqFeykE",
+                 "CAACAgIAAxkBAAEFYKRi3u-a8kYG-fQDaLp81AnKTfwHrQAClgcAAipVGAKLbGVlcW-KJCkE",
+                 "CAACAgIAAxkBAAEFYK1i3vK6X514U62nZuQU_wNpiDaF_AAC6wIAAgaRjBdLVw_io-XDXSkE",
+                 "CAACAgIAAxkBAAEFYK9i3vK9QhNu332eYxNSX2Z2DDrOPQAC5wIAAgaRjBdrCXEuHNx8FCkE",
+                 "CAACAgIAAxkBAAEFYLFi3vK_BoARXOK3djlttkPAAfBoQAAC3AIAAgaRjBfEX6sjjsH5VikE"]
+        bot.send_sticker(message.chat.id, random.choice(stick))
+
     elif (u'как дела' in msg):
         privet = ["Дела у прокурора", "Дела делишки", "Че хотел то?", "Денег не дам", "Зашибись😂"]
         bot.reply_to(message, random.choice(privet))
@@ -30,7 +49,7 @@ def handle_text(message):
     elif (u'здоров' in msg):
         privet = ["Здоровее видали😂", "Здоров без всяких докторов", "как ваше ничего?😂", "хаюшки-бабаюшки", "прЮвет😂"]
         bot.reply_to(message, random.choice(privet))
-    elif(msg == "да"):
+    elif(msg == "да" or msg== "да да"):
         privet = ["БАЛДА😂", "да-да", "да-туда😂", "караганДА"]
         bot.reply_to(message, random.choice(privet))
     elif (u'что вы тут' in msg):
