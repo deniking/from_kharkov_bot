@@ -1,6 +1,7 @@
 # bot
 import telebot
 import random
+import anekdot
 
 bot = telebot.TeleBot('5507838809:AAHtBfJfWZ1AvNqG5X7ua2Fw-0XriEaHvqg')
 
@@ -10,14 +11,11 @@ def handle_text(message):
     msg=message.text
     msg=msg.lower()
     if (u'привет' in msg):
-        privet = ["Привет лапух", "Приветик", "Че хотел?", "Ну здравствуй 😁", "Привед-ВЕДМЕД 😂"]
-        bot.reply_to(message, random.choice(privet))
-        stick = ["CAACAgIAAxkBAAEFYJdi3u09S0gzuMRXLodpRjoNKG93xQACxQIAAgaRjBcsdq1awo9q_ikE",
-                 "CAACAgIAAxkBAAEFYJVi3urLgZ0PFUfmVuoxIEosbkqrOQAC7BkAAn-lWEoHlUhTrYI7YCkE",
-                 "CAACAgIAAxkBAAEFYJli3u1B72JfxAY4W_f96c0FBRBeGwACxAIAAgaRjBcSw6H4sKsL9ykE",
-                 "CAACAgIAAxkBAAEFYJti3u1GbtHRL4XFSNCuvi8pkMQCQQACxgIAAgaRjBfOSwzjrq1o0CkE",
-                 "CAACAgIAAxkBAAEFYJ1i3u1Mr35QcbHwa7LfkAYgVfyJGQACxwIAAgaRjBfkvOE8LeT9mikE"]
-        bot.send_sticker(message.chat.id, random.choice(stick))
+        #privet = ["Привет лапух", "Приветик", "Че хотел?", "Ну здравствуй 😁", "Привед-ВЕДМЕД 😂"]
+        bot.reply_to(message, "Привед-ВЕДМЕД 😂 \nСЛУШАЙ от меня АНЕКДОТ 😂")
+        bot.send_message(message.chat.id, anekdot.list[0])
+        del anekdot.list[0]
+        bot.send_sticker(message.chat.id, 'CAACAgIAAxkBAAEFYlli4CL47Pv3Xu7uk2FW_i6Kb_kLxAACjwEAAladvQqTBL2ODiSRxikE')
     elif (msg == 'привет из россии' or msg == 'россия'):
         privet = ["Рашка-пидорашка😁", "Биомусор из Рашки", "Оркостан", "Кацапское удобрение 😁", "Рашисты-фашисты"]
         bot.reply_to(message, random.choice(privet))
