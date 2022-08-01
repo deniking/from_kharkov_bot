@@ -10,12 +10,19 @@ bot = telebot.TeleBot('5507838809:AAHtBfJfWZ1AvNqG5X7ua2Fw-0XriEaHvqg')
 def handle_text(message):
     msg=message.text
     msg=msg.lower()
-    if (u'привет' in msg):
+    if (msg== 'доброе утро' or msg== 'доброго ранку'):
         #privet = ["Привет лапух", "Приветик", "Че хотел?", "Ну здравствуй 😁", "Привед-ВЕДМЕД 😂"]
-        bot.reply_to(message, "Привед-ВЕДМЕД 😂 \nСЛУШАЙ от меня АНЕКДОТ 😂")
+        bot.reply_to(message, "Доброго ранку ми з Ураїни 🇺🇦 \nСЛУШАЙ от меня АНЕКДОТ 😂")
         bot.send_message(message.chat.id, anekdot.list[0])
         del anekdot.list[0]
-        bot.send_sticker(message.chat.id, 'CAACAgIAAxkBAAEFYlli4CL47Pv3Xu7uk2FW_i6Kb_kLxAACjwEAAladvQqTBL2ODiSRxikE')
+        stick = ["CAACAgIAAxkBAAEFYlli4CL47Pv3Xu7uk2FW_i6Kb_kLxAACjwEAAladvQqTBL2ODiSRxikE",
+                 "CAACAgIAAxkBAAEFb51i6AKSo3pZRT9xPrWkj8jWE0-NtwACAQADwDZPExguczCrPy1RKQQ",
+                 "CAACAgIAAxkBAAEFb8Ji6Az_iEhlyG_J5t1TAQqnpt1sCAACWAADUomRI32OzA4HOEuGKQQ",
+                 "CAACAgIAAxkBAAEFb8xi6A1biEPLVN2HFsJZurwAAVHfC4wAAucaAAK4hBhIJjH83tMgCW4pBA",
+                 "CAACAgIAAxkBAAEFb_Vi6BHGUmvAjJMU-rscfwGnU8NvjAACRBkAAgjh2UlSqev16oISqCkE"]
+        bot.send_sticker(message.chat.id, random.choice(stick))
+        #bot.send_animation(message.chat.id, 'https://media0.giphy.com/media/QLKSt3wQqlj7a/giphy.gif?cid=790b7611bb1c81a8ea8b7c50f16c0ed742c879d39378f1ba&rid=giphy.gif&ct=g')
+
     elif (msg == 'привет из россии' or msg == 'россия'):
         privet = ["Рашка-пидорашка😁", "Биомусор из Рашки", "Оркостан", "Кацапское удобрение 😁", "Рашисты-фашисты"]
         bot.reply_to(message, random.choice(privet))
@@ -38,9 +45,20 @@ def handle_text(message):
     elif (u'прилет' in msg):
         privet = ["ТСССС....🤨", "ох уж эти орки", "про место молчим!", "бух-бах", "Бля, достали 😒"]
         bot.reply_to(message, random.choice(privet))
-    elif (u'доброе утро' in msg):
-        privet = ["утро добрым не бывает 😂", "добрее видали ", "и вам не хворать", "✌️", "че не спишь?"]
-        bot.reply_to(message, random.choice(privet))
+    elif (u'привет' in msg):
+        #privet = ["утро добрым не бывает 😂", "добрее видали ", "и вам не хворать", "✌️", "че не спишь?"]
+        animation = ['https://media0.giphy.com/media/QLKSt3wQqlj7a/giphy.gif?cid=790b7611bb1c81a8ea8b7c50f16c0ed742c879d39378f1ba&rid=giphy.gif&ct=g',
+                     'https://media0.giphy.com/media/G3Hu8RMcnHZA2JK6x1/giphy.gif?cid=ecf05e47cfkbpa0jmmwo01ibr3qc7hv8nsjl2wkyi9um65a1&rid=giphy.gif&ct=g',
+                     'https://media3.giphy.com/media/3PAL5bChWnak0WJ32x/giphy.gif?cid=ecf05e47gh72mldgqjilnuzm90ilqcao2wtyozobfk5t5s5v&rid=giphy.gif&ct=g',
+                     'https://media3.giphy.com/media/tpwdIZZ20RQKQ/giphy.gif?cid=ecf05e47vcoppyqgofmu5b1oyva83iugsx4vu1n09ysy7doi&rid=giphy.gif&ct=g',
+                     'https://media2.giphy.com/media/xUySTQZfdpSkIIg88M/giphy.gif?cid=ecf05e47vcoppyqgofmu5b1oyva83iugsx4vu1n09ysy7doi&rid=giphy.gif&ct=g',
+                     'https://media2.giphy.com/media/W3keANaGsQLC5Ri8DM/giphy.gif?cid=790b76118329259cfe6bed5f00f6ce2182712f13e8c520a2&rid=giphy.gif&ct=g',
+                     'https://media0.giphy.com/media/dzaUX7CAG0Ihi/giphy.gif?cid=ecf05e47f0stkvs6efhuch84jcl18w3xcy0jcufnhc8ki40c&rid=giphy.gif&ct=g',
+                     'https://media4.giphy.com/media/brsEO1JayBVja/giphy.gif?cid=ecf05e47edwp7ili69d248gy8mwzxgjg8op3mqha4zv7rqkn&rid=giphy.gif&ct=g',
+                     'https://media1.giphy.com/media/o7fpdwx8e46c/giphy.gif?cid=790b76111a55bb6408681ab68302488e8799d4ed87e8c6bd&rid=giphy.gif&ct=g',
+                     'https://media2.giphy.com/media/Q0LdqbADEDDmE/giphy.gif?cid=ecf05e47tpercp2hvwy0gcenb2i4etz6607z8s2iuvpoy7iv&rid=giphy.gif&ct=g']
+        bot.send_animation(message.chat.id, random.choice(animation))
+
     elif (u'как обстановка' in msg):
         privet = ["В Багдаде все спокойно", "Бегут орки - бегут", "по-прежнему не понятно", "та такое", "а у вас как?"]
         bot.reply_to(message, random.choice(privet))
