@@ -1,29 +1,25 @@
 # bot
 import telebot
 import random
-import anekdot
+from privetstvie import privetstvie
 
 bot = telebot.TeleBot('5507838809:AAHtBfJfWZ1AvNqG5X7ua2Fw-0XriEaHvqg')
+
+
+
 
 
 @bot.message_handler(content_types=['text'])
 def handle_text(message):
     msg=message.text
     msg=msg.lower()
-    if (msg== 'доброе утро' or msg== 'доброго ранку'):
-        #privet = ["Привет лапух", "Приветик", "Че хотел?", "Ну здравствуй 😁", "Привед-ВЕДМЕД 😂"]
-        bot.reply_to(message, "Доброго ранку ми з Ураїни 🇺🇦 \nСЛУШАЙ от меня АНЕКДОТ 😂")
-        bot.send_message(message.chat.id, anekdot.list[0])
-        del anekdot.list[0]
-        stick = ["CAACAgIAAxkBAAEFYlli4CL47Pv3Xu7uk2FW_i6Kb_kLxAACjwEAAladvQqTBL2ODiSRxikE",
-                 "CAACAgIAAxkBAAEFb51i6AKSo3pZRT9xPrWkj8jWE0-NtwACAQADwDZPExguczCrPy1RKQQ",
-                 "CAACAgIAAxkBAAEFb8Ji6Az_iEhlyG_J5t1TAQqnpt1sCAACWAADUomRI32OzA4HOEuGKQQ",
-                 "CAACAgIAAxkBAAEFb8xi6A1biEPLVN2HFsJZurwAAVHfC4wAAucaAAK4hBhIJjH83tMgCW4pBA",
-                 "CAACAgIAAxkBAAEFb_Vi6BHGUmvAjJMU-rscfwGnU8NvjAACRBkAAgjh2UlSqev16oISqCkE"]
-        bot.send_sticker(message.chat.id, random.choice(stick))
-        #bot.send_animation(message.chat.id, 'https://media0.giphy.com/media/QLKSt3wQqlj7a/giphy.gif?cid=790b7611bb1c81a8ea8b7c50f16c0ed742c879d39378f1ba&rid=giphy.gif&ct=g')
 
-    elif (msg == 'привет из россии' or msg == 'россия'):
+    privetstvie(message) #privetstvie.py
+
+
+
+
+    if (msg == 'привет из россии' or msg == 'россия'):
         privet = ["Рашка-пидорашка😁", "Биомусор из Рашки", "Оркостан", "Кацапское удобрение 😁", "Рашисты-фашисты"]
         bot.reply_to(message, random.choice(privet))
         stick = ["CAACAgIAAxkBAAEFYJ9i3u-UC0gq3y52QzkojfC30d2OkgAC0wIAAgaRjBe5kRzrUAy8aikE",
