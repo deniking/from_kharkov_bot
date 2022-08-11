@@ -3,16 +3,21 @@ import random
 import anekdot
 import aforizm
 import telebot
+import pytz
 
 bot = telebot.TeleBot('5507838809:AAHtBfJfWZ1AvNqG5X7ua2Fw-0XriEaHvqg')
-time = datetime.datetime.now().time() #print(time.hour)
-time1 = int(time.strftime('%H'))
-time2 = time.strftime('%H:%M:%S')
+
 
 
 
 @bot.message_handler(content_types=['text'])
 def privetstvie (message):
+
+    time = datetime.datetime.now(pytz.timezone('Europe/Kiev'))
+    # time = datetime.datetime.now().time() #print(time.hour)
+    time1 = int(time.strftime('%H'))
+    time2 = time.strftime('%H:%M:%S')
+
     msg = message.text
     msg = msg.lower()
 # утро
